@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	layout:decorator="template">
+
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+<![endif]-->
+
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+	href="../static/css/bootstrap.min.css" />
+
+</head>
+<body>
+	<div class="container">
+		<h1 layout:fragment="header">Welcome to Xd Lab Web</h1>
+		<div layout:fragment="content">
+			Follow any of these links to generate data and login
+			<ul>
+				<li><a th:href="@{/page/1}" href="page.html">Page 1</a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
