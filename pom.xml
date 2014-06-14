@@ -9,7 +9,7 @@
 		
 	<modules>
 		<module>httpclient-factory</module>
-		<module>xd-lab-web</module>
+		<module>spring-boot-web</module>
         <module>xd-source-get</module>
     </modules>
 		
