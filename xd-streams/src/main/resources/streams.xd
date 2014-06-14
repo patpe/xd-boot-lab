@@ -1,0 +1,2 @@
+create stream --name getmetrics --definition "get --delay=5000 --username=admin --password=admin --timeout=200 --url=http://localhost:8080/metrics | file --dir=/var/log --name=metrics --suffix=log" --deploy
+create stream --name threadstap --definition "tap:stream:getmetrics > transform --expression=#jsonPath(payload,'$.threads') | rich-gauge --name=threads" --deploy

@@ -23,10 +23,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 @ComponentScan
 @EnableGlobalMethodSecurity(securedEnabled = true)
-public class XdLabWebApplication {
+public class PageWebApplication {
 
 	public static void main(String[] args) throws Exception {
-		new SpringApplicationBuilder(XdLabWebApplication.class).run(args);
+		new SpringApplicationBuilder(PageWebApplication.class).run(args);
 	}
 
 	@Bean
