@@ -1,4 +1,4 @@
-package se.r2m.lab.xd.http.client;
+package com.patpe.lab.xd.http.client;
 
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.UsernamePasswordCredentials;

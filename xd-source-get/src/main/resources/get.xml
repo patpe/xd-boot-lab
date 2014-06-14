@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:int="http://www.springframework.org/schema/integration"
+	   xmlns:int-http="http://www.springframework.org/schema/integration/http"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
+		http://www.springframework.org/schema/integration/http http://www.springframework.org/schema/integration/http/spring-integration-http.xsd">
+
+	<bean id="httpClient" class="se.r2m.lab.xd.http.client.HttpClientFactoryBean">
+		<property name="username" value="${username}" />
+		<property name="password" value="${password}" />
+	</bean>
+		
+	<bean id="clientHttpRequestFactory" class="org.springframework.http.client.HttpComponentsClientHttpRequestFactory">
+		<property name="httpClient" ref="httpClient"/>
+	</bean>
+		
+	<int-http:outbound-gateway id="getHttpGateway" request-channel="getrequest.channel" url="${url:http://localhost:8080/${xd.stream.name}}" request-factory="clientHttpRequestFactory" 
+		http-method="GET" expected-response-type="java.lang.String" charset="${charset:UTF-8}" reply-timeout="${timeout:5000}"  reply-channel="output">
+	</int-http:outbound-gateway>
+
+	<int:inbound-channel-adapter channel="getrequest.channel" expression="''">
+		<int:poller fixed-delay="${delay:60000}" />
+	</int:inbound-channel-adapter>
+		
+	<int:channel id="output"/>
+		
+</beans>

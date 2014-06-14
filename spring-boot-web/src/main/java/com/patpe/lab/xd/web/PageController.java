@@ -1,4 +1,4 @@
-package se.r2m.lab.xd.web;
+package com.patpe.lab.xd.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

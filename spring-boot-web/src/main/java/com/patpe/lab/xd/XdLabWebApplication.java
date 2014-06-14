@@ -1,4 +1,4 @@
-package se.r2m.lab.xd;
+package com.patpe.lab.xd;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

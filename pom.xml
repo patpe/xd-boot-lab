@@ -10,6 +10,7 @@
 	<modules>
 		<module>httpclient-factory</module>
 		<module>xd-lab-web</module>
-	</modules>
+        <module>xd-source-get</module>
+    </modules>
 		
 </project>
