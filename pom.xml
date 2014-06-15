@@ -6,7 +6,11 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<name>Spring Boot / XD Lab</name>
 	<packaging>pom</packaging>
-		
+
+    <scm>
+        <connection>scm:git:https://github.com/patpe/xd-boot-lab.git</connection>
+    </scm>
+
 	<modules>
 		<module>httpclient-factory</module>
 		<module>spring-boot-web</module>
