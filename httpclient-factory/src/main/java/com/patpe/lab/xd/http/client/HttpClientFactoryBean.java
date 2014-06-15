@@ -7,6 +7,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.BasicCredentialsProvider;
 import org.apache.http.impl.client.HttpClients;
 import org.springframework.beans.factory.FactoryBean;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Factory bean for creating {@link HttpClient} with authentication set.
@@ -14,8 +15,10 @@ import org.springframework.beans.factory.FactoryBean;
  */
 public class HttpClientFactoryBean implements FactoryBean<HttpClient> {
 
-	private String username;
+	@Autowired
+    private String username;
 
+    @Autowired
 	private String password;
 
 	public String getUsername() {
@@ -41,6 +44,7 @@ public class HttpClientFactoryBean implements FactoryBean<HttpClient> {
 					new UsernamePasswordCredentials(username, password));
 			return HttpClients.custom()
 					.setDefaultCredentialsProvider(credsProvider).build();
+
 		} else {
 			return HttpClients.createDefault();
 		}

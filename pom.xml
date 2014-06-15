@@ -11,6 +11,7 @@
 		<module>httpclient-factory</module>
 		<module>spring-boot-web</module>
         <module>xd-source-get</module>
+        <module>xd-streams</module>
     </modules>
 		
 </project>

@@ -53,7 +53,7 @@ public class PageWebApplication {
 	}
 
 	@Order(Ordered.LOWEST_PRECEDENCE - 5)
-	protected static class WebApplicationConfiguration extends
+    private static class WebApplicationConfiguration extends
 			WebMvcConfigurerAdapter {
 
 		@Autowired

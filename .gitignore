@@ -8,3 +8,4 @@ spring-boot-xd.iml
 httpclient-factory/httpclient-factory.iml
 spring-boot-web/spring-boot-web.iml
 xd-source-get/xd-source-get.iml
+xd-streams/xd-streams.iml
